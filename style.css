@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+  <meta charset="UTF-8">
+  <title>Forms</title>
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header>
+	  <h1>Forms</h1>
+	  </header>
+  <hr>
+	<h2>Simple Form</h2>
+  <form>
+		<fieldset>
+		<label>Name: <input type='text' id = 'name' name = 'name'></label>	
+		<br>
+		<label>Email: <input type='email' name = 'email'> </label>
+		<br> 	
+		<label for = "birth">Birthdate:</label>
+		<input type = "date" id = "birth" value = "birth">
+		<br>
+		<input type = "submit" value = "Submit" class = "buttonSubmit">
+		</form>	
+	    <br>
+		<h2>Simple Form Validation</h2>
+		<form>
+			<label for = "children">Number of Children:</label>
+			<input type = "number" id = "children" name = "children" min = "0" max = "99" required>
+			<br>
+			<label for = "phone">Phone:</label>
+			<input type = "tel" id = "phone" name = "phone" pattern = "^\(\d{3}\)\s\d{3}-\d{4}" placeholder = "(555) 555-5555" required>
+			<br>
+			<label for = "ssn">Social Security Number:</label>
+			<input type = "text" id = "ssn" name = "ssn" pattern = "^(?!(000|666|9))\d{3}-(?!00)\d{2}-(?!0000)\d{4}$" placeholder = "XXX-XX-XXXX" required>
+			<br>
+			<input type = "submit" value = "Submit" class = "buttonSubmit">
+		</form>
+		<hr>
+	
+	<h2>Compare Inputs</h2>
+		<form>
+			<label for = "pass1">Password&nbsp;</label>
+			<input type="password" id="pass1" name="pass1" minlength="6" required>
+			<i>&nbsp; &nbsp; Password must be at least 8 characters.</i>
+			<br>
+			<label for = "pass2">Confirm Password&nbsp;</label>
+			<input type="password" id="pass2" name="pass2" required onchange="checkpass()">
+			<br>
+			<input type = "submit" value = "Submit" class = "buttonSubmit" onclick="return checkpass()">
+		</form>
+		<hr>
+	
+	<h2>Checkboxes</h2>
+	<aside class="left">
+	<p>Almost everyone wants to travel the world. Which continents have you visited or would you like to visit?</p>
+	</aside>
+	<aside class="right">
+		<form>
+			<label><input type = "checkbox" name = "continent" value = "Africa"> Africa</label>
+			<label><input type = "checkbox" name = "continent" value = "Antarctica"> Antarctica</label>
+			<label><input type = "checkbox" name = "continent" value = "Asia"> Asia</label>
+			<label><input type = "checkbox" name = "continent" value = "Australia"> Australia/Oceania</label>
+			<br>
+			<label><input type = "checkbox" name = "continent" value = "Europe"> Europe</label>
+			<label><input type = "checkbox" name = "continent" value = "NorthAmerica"> North America</label>
+			<label><input type = "checkbox" name = "continent" value = "SouthAmerica"> South America</label>
+			<br>
+			<input type = "submit"  class = "buttonSubmit">
+		</form>
+	</aside>
+	<hr>
+	
+	<h2>Radio Buttons</h2>
+		<form>
+			<p>Would you describe your personality as introvert or extrovert?</p>
+			<label><input type = "radio" name = "personality" value = "introvert"> Introvert</label>
+			<br>
+			<label><input type = "radio" name = "personality" value = "extrovert"> Extrovert</label>
+			<br>
+			<p>Do you prefer working alone or with a team?</p>
+			<label><input type = "radio" name = "work" value = "alone"> Alone</label>
+			<br>
+			<label><input type = "radio" name = "work" value = "team"> With a Team</label>
+			<br>
+			<label><input type = "radio" name = "work" value = "workboth"> No Preference</label>
+			<br>
+			<input type = "submit"  class = "buttonSubmit">
+		</form>
+		<hr>
+	
+	<h2>Conditional Statements with Checkbox</h2>
+		<form>
+			<p>Rate your most recent experience with our customer success team.</p>
+			<p><label for="solved">Was your issue resolved on your first call?</label></p>
+			<label><input type = "radio" name = "solved" value = "solvedyes"> Yes</label>
+			<br>
+			<label><input type = "radio" name = "solved" value = "solvedno"> No</label>
+			<br>
+			
+			<p><label for="friendly">Rate the friendliness of our team:</label></p>
+			<p>
+			<select id="friendly" name="friendly">
+			<option value="BiBiCat">BibICat</option>
+			<option value="super">Super Friendly</option>
+  			<option value="average">Just Average</option>
+  			<option value="terrible">Terrible Attitude</option>
+			</select>
+			</p>
+			<br>
+			
+			<label for = "yesManager">Check the box to have a manager contact you.</label>
+			<input id = "yesManager" type = "checkbox" value = "yes" onchange = "managerFunction()">
+						
+			<div id = "bibivibe">
+				<label for = "timetocall">Best Time to Call Me:</label>
+				<input type = "text" name = "timetocall" id = "timetocall">
+			</div>
+		<body onload="setDate()">
+          <p>The current date is <span id = "date"></span></p>
+			<input type = "submit"  class = "buttonSubmit">
+	 </fieldset>
+	</form>
+  </body>
+</html>
+
+/*
+   <link rel="stylesheet" href="..css/styles.css">
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* My CSS Code */
+
+body{
+    font-size: 20px;
+    font-family: Calibri, Tahoma, Arial;
+}
+
+header{
+    background-color: #214052;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Calibri, Tahoma, Arial;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+div, button, p, section, h2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+body{
+    background: #eaeaea;
+}
+
+button{
+    display: inline;
+    border-style: solid;
+    border-color: #4e585d;
+    border-radius: 8px;
+    background: #9cb9d2;
+    font-weight: bolder;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+h2{
+    background: #b7b7b7;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.left{
+    display: inline-block;
+    height: 10%;
+    width: 24%;
+    padding: 20px 0;
+    margin-left: 20px;
+    vertical-align: center;
+    float: left;
+}
+#bibivibe{
+	color: #000000;
+}
+.right{
+    display: inline-block;
+    height: 10%;
+    width: 74%;
+    vertical-align: center;
+    padding: 20px 0;
+    float: right;
+}
+
+form{
+	padding: 20px;
+}
+
+input{
+	margin-bottom: 20px;
+}
+
+hr{
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    height: 2px;
+    line-height: 2px;
+    border: none;
+    background-color: #848484;
+}
+
+.buttonSubmit {
+	margin-bottom: 0px;
+	font-weight: bolder;
+}
+
+i {
+	font-style: italic;
+	font-weight: lighter;
+}
+
